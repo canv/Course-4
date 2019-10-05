@@ -4,13 +4,10 @@ import com.google.common.base.Strings;
 import app.exceptions.*;
 import app.models.*;
 import app.repositories.*;
-import lombok.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Objects;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 @Service
 public class UserServiceFirstImplements implements UserService {
