@@ -3,4 +3,4 @@ spring:
     driver-class-name: org.postgresql.Driver
     username: postrges
     password: eineCIRM
-    url: jdbc:postgresql://localhost:5432/postgres
+    url: jdbc:postgresql://localhost:5432/newDB
