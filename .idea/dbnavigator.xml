@@ -24,33 +24,36 @@
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
     <loaded-nodes>
-      <connection connection-id="ba0116d0-6716-4102-b19f-13f1ee148a01">
-        <schema name="information_schema" object-types="constraint, function, sequence, dataset trigger, view, index, table, column" />
-        <schema name="pg_catalog" object-types="function, view, table" />
-        <schema name="public" object-types="function, view, table" />
+      <connection connection-id="c790d778-b299-435c-9f52-16b9a540e42a">
+        <schema name="information_schema" object-types="constraint, column, function, sequence, dataset trigger, table, view, index" />
+        <schema name="pg_catalog" object-types="function, sequence, table, view" />
+        <schema name="pg_temp_1" object-types="function, sequence, table, view" />
+        <schema name="pg_toast" object-types="function, sequence, table, view" />
+        <schema name="pg_toast_temp_1" object-types="function, sequence, table, view" />
+        <schema name="public" object-types="function, sequence, table, view" />
       </connection>
     </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="ba0116d0-6716-4102-b19f-13f1ee148a01">
-      <console name="postgres@localhost" type="STANDARD" schema="information_schema" session="Main">create table Users (
+    <connection id="c790d778-b299-435c-9f52-16b9a540e42a">
+      <console name="firstConnectionName" type="STANDARD" schema="information_schema" session="Main"><![CDATA[create table UsersSQL (
         id varchar (255) primary key,
         userName varchar (255),
         password varchar (255)
 )
 
-insert into Users (id,userName,password)
+insert into UsersSQL (id,userName,password)
 values ('f0425370-d93b-4c03-bc74-925f49cafd67','someUserName','somePass')
 
-select id,userName,password from Users
-select id,userName,password from Users where id='f0425370-d93b-4c03-bc74-925f49cafd67'</console>
+select id,userName,password from UsersSQL
+select id,userName from UsersSQL where id='f0425370-d93b-4c03-bc74-925f49cafd67']]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="ba0116d0-6716-4102-b19f-13f1ee148a01" />
+    <connection id="c790d778-b299-435c-9f52-16b9a540e42a" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -75,9 +78,9 @@ select id,userName,password from Users where id='f0425370-d93b-4c03-bc74-925f49c
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="ba0116d0-6716-4102-b19f-13f1ee148a01" active="true">
+      <connection id="c790d778-b299-435c-9f52-16b9a540e42a" active="true">
         <database>
-          <name value="postgres@localhost" />
+          <name value="firstConnectionName" />
           <description value="" />
           <database-type value="POSTGRES" />
           <config-type value="BASIC" />
@@ -88,7 +91,7 @@ select id,userName,password from Users where id='f0425370-d93b-4c03-bc74-925f49c
           <url-type value="DATABASE" />
           <host value="localhost" />
           <port value="5432" />
-          <database value="postgres" />
+          <database value="newDB" />
           <type value="USER_PASSWORD" />
           <user value="postgres" />
           <deprecated-pwd value="ZWluZUNJUk0=" />

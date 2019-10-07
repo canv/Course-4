@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.*;
 
-@Repository
+//@Repository
 public class UserRepositorySafeToMap implements UserRepository {
     private final Map<UUID, User> uuidUserMap;
 
