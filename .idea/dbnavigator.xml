@@ -24,19 +24,15 @@
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
     <loaded-nodes>
-      <connection connection-id="c790d778-b299-435c-9f52-16b9a540e42a">
-        <schema name="information_schema" object-types="constraint, column, function, sequence, dataset trigger, table, view, index" />
-        <schema name="pg_catalog" object-types="function, sequence, table, view" />
-        <schema name="pg_temp_1" object-types="function, sequence, table, view" />
-        <schema name="pg_toast" object-types="function, sequence, table, view" />
-        <schema name="pg_toast_temp_1" object-types="function, sequence, table, view" />
-        <schema name="public" object-types="function, sequence, table, view" />
+      <connection connection-id="1ff8b5dd-d299-4b05-ba54-329cc1735090">
+        <schema name="pg_catalog" object-types="view, function, table" />
+        <schema name="public" object-types="view, column, function, table" />
       </connection>
     </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="c790d778-b299-435c-9f52-16b9a540e42a">
-      <console name="firstConnectionName" type="STANDARD" schema="information_schema" session="Main"><![CDATA[create table UsersSQL (
+    <connection id="1ff8b5dd-d299-4b05-ba54-329cc1735090">
+      <console name="newDB@localhost" type="STANDARD" schema="public" session="Main">create table UsersSQL (
         id varchar (255) primary key,
         userName varchar (255),
         password varchar (255)
@@ -46,14 +42,14 @@ insert into UsersSQL (id,userName,password)
 values ('f0425370-d93b-4c03-bc74-925f49cafd67','someUserName','somePass')
 
 select id,userName,password from UsersSQL
-select id,userName from UsersSQL where id='f0425370-d93b-4c03-bc74-925f49cafd67']]></console>
+select id,userName from UsersSQL where id='f0425370-d93b-4c03-bc74-925f49cafd67'</console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="c790d778-b299-435c-9f52-16b9a540e42a" />
+    <connection id="1ff8b5dd-d299-4b05-ba54-329cc1735090" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -78,9 +74,9 @@ select id,userName from UsersSQL where id='f0425370-d93b-4c03-bc74-925f49cafd67'
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="c790d778-b299-435c-9f52-16b9a540e42a" active="true">
+      <connection id="1ff8b5dd-d299-4b05-ba54-329cc1735090" active="true">
         <database>
-          <name value="firstConnectionName" />
+          <name value="newDB@localhost" />
           <description value="" />
           <database-type value="POSTGRES" />
           <config-type value="BASIC" />

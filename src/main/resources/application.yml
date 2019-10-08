@@ -1,6 +1,13 @@
+
+#database
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    username: postrges
-    password: eineCIRM
     url: jdbc:postgresql://localhost:5432/newDB
+    username: postgres
+    password: eineCIRM
+
+#user_prefix
+#app:
+#  user:
+#    prefix: ☺
