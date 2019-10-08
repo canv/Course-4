@@ -5,8 +5,8 @@
     <title>User info</title>
 </head>
 <body>
-<h1 th:text="${user.username}"></h1>
-<h2 th:text="${user.id}"></h2>
+<h1 th:text="${user.getUsername()}"></h1>
+<h2 th:text="${user.getId()}"></h2>
 <h3 th:text="${user.toString()}"></h3>
 <a href="/">Add another user</a>
 <a href="/users">Show all users</a>
