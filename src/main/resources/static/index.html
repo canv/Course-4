@@ -2,16 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Add user</title>
 </head>
 <body>
-<h1>Hi, input a user!</h1>
-<form action="/user" method="post">
-    <label for="userName">User Name:</label><input id="userName" name="userName" type="text">
-    <label for="password">Password:</label><input id="password" name="password" type="text">
-    <input type="submit" value="Save">
+<center>
+    <h1>Hi, input a user!</h1>
+    <form action="/user" method="post">
+        <label for="userName">User Name:</label>
+        <input id="userName" name="userName" type="text">
+        <br>
+        <label for="password">Password:</label>
+        <input id="password" name="password" type="password">
+        <br>
+        <input type="submit" value="Save">
+    </form>
+    <br>
+    <form action="/user" method="get">
+        <label for="id">Find user by uuid:</label>
+        <input id="id" name="id" type="text">
+        <input type="submit" value="Search">
+    </form>
+    <br>
     <a href="/users">Show all users</a>
-    <h2>there should be a search!</h2>
-</form>
+</center>
 </body>
 </html>
