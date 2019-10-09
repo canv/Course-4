@@ -2,7 +2,7 @@ package app.repositories;
 
 import app.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.*;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
@@ -10,32 +10,38 @@ import java.util.stream.Collectors;
 
 @Repository
 public class UserRepositoryJdbc implements UserRepository {
-
-    private JdbcTemplate jdbcTemplate;
+    private NamedParameterJdbcTemplate template;
 
     @Autowired
-    public UserRepositoryJdbc(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
+    public UserRepositoryJdbc(NamedParameterJdbcTemplate template) {
+        this.template = template;
     }
 
     @Override
     public User findByID(UUID id) {
-        Map<String, Object> userAsMap = jdbcTemplate.queryForMap(
-                "SELECT id,userName,password FROM UsersSQL WHERE id=?", id.toString());
+        final String sqlFindByID = "SELECT id,userName,password FROM UsersSQL WHERE id=:id";
+        MapSqlParameterSource sqlParam = new MapSqlParameterSource("id",id.toString());
+        Map<String, Object> userAsMap = template.queryForMap(sqlFindByID,sqlParam);
         return convertUserFromMap(userAsMap);
     }
 
     @Override
     public User save(User user) {
-        if(Objects.isNull(user.getId())) user.setId(UUID.randomUUID()); // don't forget to fix it
-        jdbcTemplate.update("INSERT INTO UsersSQL (id,userName,password) VALUES (?,?,?)",
-                user.getId().toString(), user.getUsername(), user.getMd5Password());
+        if(Objects.isNull(user.getId())) user.setId(UUID.randomUUID());
+        final String sqlSave = "INSERT INTO UsersSQL (id,userName,password) VALUES (:id, :userName, :password)";
+        MapSqlParameterSource sqlParam = new MapSqlParameterSource();
+        sqlParam.addValue("id",user.getId().toString());
+        sqlParam.addValue("userName",user.getUsername());
+        sqlParam.addValue("password",user.getMd5Password());
+        template.update(sqlSave,sqlParam);
         return findByID(user.getId());
     }
 
     @Override
     public Set<User> findAll() {
-        List<Map<String, Object>> allUsersAsMap = jdbcTemplate.queryForList("SELECT id,userName,password FROM UsersSQL");
+        final String sqlFindAll = "SELECT id,userName,password FROM UsersSQL";
+        MapSqlParameterSource sqlPlug = new MapSqlParameterSource();
+        List<Map<String, Object>> allUsersAsMap = template.queryForList(sqlFindAll, sqlPlug);
         return allUsersAsMap.stream()
                 .map(this::convertUserFromMap)
                 .collect(Collectors.toSet());

@@ -3,7 +3,6 @@ package app.repositories;
 
 import app.models.User;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.*;
 

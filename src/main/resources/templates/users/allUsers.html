@@ -5,9 +5,19 @@
     <title>All users</title>
 </head>
 <body>
-<div th:each="user : ${users}">
-    <h3 th:text="${user.getUsername()}"></h3>
-</div>
-<a href="/">Add another user</a>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>User name</th>
+            <th>UUID</th>
+        </tr>
+        <div th:each="user : ${users}">
+            <tr>
+                <td th:text="${user.getUsername()}"></td>
+                <td th:text="${user.getId()}"></td>
+            </tr>
+        </div>
+    </table>
+    <br/>
+    <a href="/">Add another user</a>
 </body>
 </html>

@@ -2,7 +2,6 @@ package app.controllers;
 
 import app.models.*;
 import app.services.*;
-import lombok.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,9 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.Set;
-import java.util.UUID;
-import java.util.stream.Collectors;
+import java.util.*;
 
 @Controller
 public class UserControllerIDE implements UserController {
@@ -47,13 +44,5 @@ public class UserControllerIDE implements UserController {
         Set<User> allUsers = service.getAll();
         model.addAttribute("users",allUsers);
         return "users/allUsers";
-    }
-
-    @GetMapping("/test")
-    @Override
-    public String userDemo(Model model) {
-        final User user = new User(UUID.randomUUID(), "admin", "root");
-        model.addAttribute("user", user);
-        return "user";
     }
 }
