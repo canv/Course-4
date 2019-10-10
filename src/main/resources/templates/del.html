@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete user</title>
+</head>
+<body>
+    <center>
+        <h1>Deleting user "<a th:text="${user.getUsername()}"></a>" was successful</h1>
+        <a href="/">Home page</a>
+        <a href="/users">Show remaining users</a>
+    </center>
+</body>
+</html>

@@ -26,6 +26,12 @@ public class UserRepositorySafeToMap implements UserRepository {
     }
 
     @Override
+    public User delete(User user) {
+
+        return user;
+    }
+
+    @Override
     public Set<User> findAll(){
         return new HashSet<>(uuidUserMap.values());
     }

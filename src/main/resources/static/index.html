@@ -6,24 +6,37 @@
 </head>
 <body>
 <center>
-    <h1>Hi, input a user!</h1>
-    <form action="/user" method="post">
-        <label for="userName">User Name:</label>
-        <input id="userName" name="userName" type="text">
-        <br>
-        <label for="password">Password:</label>
-        <input id="password" name="password" type="password">
-        <br>
-        <input type="submit" value="Save">
-    </form>
-    <br>
+
+    <h2>Find user:</h2>
     <form action="/user" method="get">
-        <label for="id">Find user by uuid:</label>
-        <input id="id" name="id" type="text">
+        <label for="id">Find by ID:</label>
+        <input id="id" name="id" type="text" required placeholder="">
         <input type="submit" value="Search">
     </form>
+
+    <h2>Create new user:</h2>
+    <form action="/user" method="post">
+        <label for="userName">User Name:</label>
+        <input id="userName" name="userName" type="text" required placeholder="">
+        <label for="password">Password:</label>
+        <input id="password" name="password" type="password" required placeholder="">
+        <input type="submit" value="Save">
+    </form>
+
+    <h2>Delete the user:</h2>
+    <form action="/del" method="post">
+        <label for="id">ID:</label>
+        <input name="id" type="text" required placeholder="">
+        <label for="userName">User Name:</label>
+        <input name="userName" type="text" required placeholder="">
+        <label for="password">Password:</label>
+        <input name="password" type="password" required placeholder="">
+        <input type="submit" value="(!)Delete(!)">
+    </form>
+    <br>
     <br>
     <a href="/users">Show all users</a>
+
 </center>
 </body>
 </html>
