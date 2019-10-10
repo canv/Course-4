@@ -26,13 +26,13 @@
     <loaded-nodes>
       <connection connection-id="1ff8b5dd-d299-4b05-ba54-329cc1735090">
         <schema name="pg_catalog" object-types="view, table, function" />
-        <schema name="public" object-types="column, view, table, function" />
+        <schema name="public" object-types="view, table, function, column" />
       </connection>
     </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="1ff8b5dd-d299-4b05-ba54-329cc1735090">
-      <console name="newDB@localhost" type="STANDARD" schema="public" session="Main">create table UsersSQL (
+      <console name="newDB@localhost" type="STANDARD" schema="public" session="Main"><![CDATA[create table UsersSQL (
         id varchar (255) primary key,
         userName varchar (255),
         password varchar (255)
@@ -42,7 +42,12 @@ insert into UsersSQL (id,userName,password)
 values ('f0425370-d93b-4c03-bc74-925f49cafd67','someUserName','somePass')
 
 select id,userName,password from UsersSQL
-select id,userName from UsersSQL where id='f0425370-d93b-4c03-bc74-925f49cafd67'</console>
+select id,userName from UsersSQL where id='d3e560a3-87a4-4048-91ef-2b8313d9c833'
+
+--testDelete
+DELETE FROM UsersSQL WHERE id='18f3a4cd-f44b-43c4-a8bb-09fdbde32e4c' 
+                       and username='password test' 
+                       and password='onetwothree']]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
@@ -93,7 +98,7 @@ select id,userName from UsersSQL where id='f0425370-d93b-4c03-bc74-925f49cafd67'
           <deprecated-pwd value="ZWluZUNJUk0=" />
         </database>
         <properties>
-          <auto-commit value="false" />
+          <auto-commit value="true" />
         </properties>
         <ssh-settings>
           <active value="false" />

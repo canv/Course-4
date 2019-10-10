@@ -5,10 +5,9 @@
     <title>User info</title>
 </head>
 <body>
-<h1 th:text="${user.getUsername()}"></h1>
-<h2 th:text="${user.getId()}"></h2>
-<h3 th:text="${user.toString()}"></h3>
-<a href="/">Add another user</a>
-<a href="/users">Show all users</a>
+    <h1>User "<a th:text="${user.getUsername()}"></a>" was successful created</h1>
+    <h3 th:text="${user.toString()}"></h3>
+    <a href="/">Home page</a>
+    <a href="/users">Show all users</a>
 </body>
 </html>

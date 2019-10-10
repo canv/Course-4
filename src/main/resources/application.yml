@@ -1,4 +1,3 @@
-
 #database
 spring:
   datasource:
@@ -6,8 +5,3 @@ spring:
     url: jdbc:postgresql://localhost:5432/newDB
     username: postgres
     password: eineCIRM
-
-#user_prefix
-#app:
-#  user:
-#    prefix: ☺

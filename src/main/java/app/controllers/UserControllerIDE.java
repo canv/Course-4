@@ -38,6 +38,22 @@ public class UserControllerIDE implements UserController {
         return "user";
     }
 
+    @PostMapping("/del")
+    @Override
+    public String deleteUser(@RequestParam("id") String id,
+                             @RequestParam("userName") String userName,
+                             @RequestParam("password") String password,
+                             Model model) {
+        User isDelete = service.getByID(id);
+        if(Objects.isNull(isDelete)) return null;
+        if (!userName.equals(isDelete.getUsername())
+                && !password.equals(isDelete.getMd5Password()))
+            return null;
+        User deletedUser = service.deleteUser(isDelete);
+        model.addAttribute("user", deletedUser);
+        return "/del";
+    }
+
     @GetMapping("/users")
     @Override
     public String getAllUsers(Model model) {

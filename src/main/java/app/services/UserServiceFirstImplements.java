@@ -39,6 +39,11 @@ public class UserServiceFirstImplements implements UserService {
     }
 
     @Override
+    public User deleteUser(User user) {
+        return repository.delete(user);
+    }
+
+    @Override
     public Set<User> getAll(){
         return repository.findAll();
     }

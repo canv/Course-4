@@ -38,6 +38,18 @@ public class UserRepositoryJdbc implements UserRepository {
     }
 
     @Override
+    public User delete(User user) {
+        final String sqlDeleteUser = "DELETE FROM UsersSQL " +
+                "WHERE id=:id AND username=:userName AND password=:password";
+        MapSqlParameterSource sqlParam = new MapSqlParameterSource();
+        sqlParam.addValue("id",user.getId().toString());
+        sqlParam.addValue("userName",user.getUsername());
+        sqlParam.addValue("password",user.getMd5Password());
+        template.update(sqlDeleteUser,sqlParam);
+        return user;
+    }
+
+    @Override
     public Set<User> findAll() {
         final String sqlFindAll = "SELECT id,userName,password FROM UsersSQL";
         MapSqlParameterSource sqlPlug = new MapSqlParameterSource();
