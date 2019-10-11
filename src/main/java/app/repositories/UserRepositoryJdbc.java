@@ -26,7 +26,7 @@ public class UserRepositoryJdbc implements UserRepository {
     }
 
     @Override
-    public User save(User user) {
+    public User saveUser(User user) {
         if(Objects.isNull(user.getId())) user.setId(UUID.randomUUID());
         final String sqlSave = "INSERT INTO UsersSQL (id,userName,password) VALUES (:id, :userName, :password)";
         MapSqlParameterSource sqlParam = new MapSqlParameterSource();
