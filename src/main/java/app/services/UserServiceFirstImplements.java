@@ -35,11 +35,13 @@ public class UserServiceFirstImplements implements UserService {
             throw new IllegalUsernameException("Wrong user name!");
         if (Strings.isNullOrEmpty(user.getMd5Password()))
             throw new IllegalPasswordException("Wrong password!");
-        return repository.save(user);
+        return repository.saveUser(user);
     }
 
     @Override
     public User deleteUser(User user) {
+        if(Objects.isNull(user)) return null;
+
         return repository.delete(user);
     }
 

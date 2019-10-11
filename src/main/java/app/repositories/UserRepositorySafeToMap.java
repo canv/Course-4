@@ -20,7 +20,7 @@ public class UserRepositorySafeToMap implements UserRepository {
     }
 
     @Override
-    public User save(User user){
+    public User saveUser(User user){
         uuidUserMap.put(user.getId(),user);
         return user;
     }
