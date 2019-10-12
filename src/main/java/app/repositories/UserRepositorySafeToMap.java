@@ -26,7 +26,7 @@ public class UserRepositorySafeToMap implements UserRepository {
     }
 
     @Override
-    public User delete(User user) {
+    public User deleteUser(User user) {
 
         return user;
     }

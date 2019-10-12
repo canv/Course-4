@@ -42,7 +42,7 @@ public class UserServiceFirstImplements implements UserService {
     public User deleteUser(User user) {
         if(Objects.isNull(user)) return null;
 
-        return repository.delete(user);
+        return repository.deleteUser(user);
     }
 
     @Override

@@ -8,6 +8,6 @@ import java.util.UUID;
 public interface UserRepository {
     User findByID(UUID id);
     User saveUser(User user);
-    User delete(User user);
+    User deleteUser(User user);
     Set<User> findAll();
 }

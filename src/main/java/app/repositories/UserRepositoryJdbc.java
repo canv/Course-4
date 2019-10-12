@@ -38,7 +38,7 @@ public class UserRepositoryJdbc implements UserRepository {
     }
 
     @Override
-    public User delete(User user) {
+    public User deleteUser(User user) {
         final String sqlDeleteUser = "DELETE FROM UsersSQL " +
                 "WHERE id=:id AND username=:userName AND password=:password";
         MapSqlParameterSource sqlParam = new MapSqlParameterSource();
