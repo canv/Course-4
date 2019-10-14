@@ -8,6 +8,7 @@ public class Lesson17 {
     public static void main(String[] args) {
 //      1) Реализовать удобный поиск
 //      2) Использовать JdbcTemplate named prepared statement
+//      3) Добавить новые сущности
         SpringApplication.run(Lesson17.class, args);
     }
 }
