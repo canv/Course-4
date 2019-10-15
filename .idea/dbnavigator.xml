@@ -23,11 +23,16 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes />
+    <loaded-nodes>
+      <connection connection-id="1ff8b5dd-d299-4b05-ba54-329cc1735090">
+        <schema name="pg_catalog" object-types="table, view, function" />
+        <schema name="public" object-types="table, view, column, function" />
+      </connection>
+    </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="1ff8b5dd-d299-4b05-ba54-329cc1735090">
-      <console name="newDB@localhost" type="STANDARD" schema="public" session="Main"><![CDATA[create table UsersSQL (
+      <console name="newDB@localhost" type="STANDARD" schema="public" session="Main">create table UsersSQL (
         id varchar (255) primary key,
         userName varchar (255),
         password varchar (255)
@@ -42,7 +47,7 @@ select id,userName from UsersSQL where id='d3e560a3-87a4-4048-91ef-2b8313d9c833'
 --testDelete
 DELETE FROM UsersSQL WHERE id='18f3a4cd-f44b-43c4-a8bb-09fdbde32e4c' 
                        and username='password test' 
-                       and password='onetwothree']]></console>
+                       and password='onetwothree'</console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
