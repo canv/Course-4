@@ -2,6 +2,7 @@ package app.controllers;
 
 import app.exceptions.UserNotFoundException;
 import app.models.*;
+import app.repositories.MessageRepository;
 import app.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,9 @@ import java.util.*;
 @Controller
 public class UserControllerIDE implements UserController {
     private UserService service;
+
+    @Autowired
+    private MessageRepository messageRepository;
 
     @Autowired
     public UserControllerIDE(UserService service) {

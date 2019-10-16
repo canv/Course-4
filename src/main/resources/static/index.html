@@ -41,5 +41,14 @@
     <a href="/users">Show all users</a>
 
 </center>
+
+Messages
+<div th:each="message : ${messages}">
+
+    <b th:text="${message.getId()}"></b>
+    <span th:text="${message.getMessageText()}"></span>
+    <i th:text="${message.getMessageTag()}"></i>
+
+</div>
 </body>
 </html>
